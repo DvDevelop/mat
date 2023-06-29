@@ -2,16 +2,62 @@
 
 @include mat.core();
 $custom-primary-map: (
-    50 : #e8eaf6,
-    100 : #c5cbe9,
-    200 : #9fa8da,
-    300 : #7985cb,
-    400 : #5c6bc0,
-    500 : #3f51b5,
-    600 : #394aae,
-    700 : #3140a5,
-    800 : #29379d,
-    900 : #1b278d,
+    50 : #d5f9ef,
+    100 : #95eed5,
+    200 : #1de3b8,
+    300 : #00d39c,
+    400 : #00c489,
+    500 : #00b677,
+    600 : #00a769,
+    700 : #009659,
+    800 : #00854b,
+    900 : #00672d,
+    contrast: (50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+    )
+);
+$custom-secondary-map: (
+    50 : #e0f3fb,
+    100 : #b0e1f5,
+    200 : #7ccdee,
+    300 : #48b9e7,
+    400 : #1dabe3,
+    500 : #009ddf,
+    600 : #008fd1,
+    700 : #007dbd,
+    800 : #006caa,
+    900 : #004d89,
+    contrast: (50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+    )
+);
+$custom-warn-map: (
+    50 : #fde3e8,
+    100 : #fab9c6,
+    200 : #f58ca0,
+    300 : #ef5e7c,
+    400 : #e93c61,
+    500 : #e31d48,
+    600 : #d31747,
+    700 : #be1044,
+    800 : #ab0642,
+    900 : #88003d,
     contrast: (50 : #000000,
         100 : #000000,
         200 : #000000,
@@ -47,9 +93,9 @@ $custom-primary-warn: (
         900 : #ffffff,
     )
 );
-$my-primary: mat.define-palette(mat.$cyan-palette, 500);
-$my-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
-$my-warn: mat.define-palette(mat.$red-palette);
+$my-primary: mat.define-palette($custom-primary-map, 500);
+$my-accent: mat.define-palette($custom-secondary-map, 400, 300, 600);
+$my-warn: mat.define-palette($custom-warn-map);
 $my-theme: mat.define-light-theme((color: (primary: $my-primary,
                 accent: $my-accent,
                 warn: $my-warn,
@@ -57,7 +103,7 @@ $my-theme: mat.define-light-theme((color: (primary: $my-primary,
             typography: mat.define-typography-config(),
             density: 0,
         ));
-$my-primary-dark: mat.define-palette($custom-primary-map, 500);
+$my-primary-dark: mat.define-palette(mat.$cyan-palette, 500);
 $my-accent-dark: mat.define-palette(mat.$deep-orange-palette, A200, A100, A400);
 $my-warn-dark: mat.define-palette($custom-primary-warn);
 $my-theme-dark: mat.define-dark-theme((color: (primary: $my-primary-dark,
