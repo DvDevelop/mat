@@ -4,8 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatModule } from './mat/mat.module';
 import { LoginComponent } from './auth/login/login.component'
+
+
+import { MatModule } from './mat/mat.module';
+import { ContentModule } from './content/content.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,10 @@ import { LoginComponent } from './auth/login/login.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    MatModule
+    MatModule,
+    ContentModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
